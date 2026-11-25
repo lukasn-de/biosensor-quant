@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# Data and outputs (keep raw microscopy data out of the repo)
+data/
+demo/
+results/
+figures/
+*.tif
+*.tiff
+*.png
+*.npy
+*.xlsx
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

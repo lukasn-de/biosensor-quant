@@ -1,0 +1,66 @@
+# biosensor-quant settings. Every key is optional; anything left out uses the default shown.
+# Use with:  biosensor-quant run data/ --config config/example.toml
+# Command-line options override values in this file.
+
+
+# --- Files ---
+# filename ending of the ratio numerator channel, e.g. '405.tif'
+numerator_suffix = '405.tif'
+# filename ending of the ratio denominator channel, e.g. '488.tif'
+denominator_suffix = '488.tif'
+# label for the numerator channel in output columns
+numerator_name = '405'
+# label for the denominator channel in output columns
+denominator_name = '488'
+# filename ending of the Cellpose masks
+mask_suffix = 'Trans (CSU)_cp_masks.png'
+# filename ending of the brightfield images
+brightfield_suffix = 'Trans (CSU).tif'
+# regex; named groups become output columns
+filename_pattern = '^(?P<well>[^-]+)--W(?P<wellnum>\d+)--P(?P<pos>\d+)--Z\d+--T(?P<time>\d+)--'
+# resize all images to H,W (e.g. 2048,2048); default: no resizing
+# target_size = [2048, 2048]
+
+# --- Preprocessing ---
+# Gaussian blur on both channels
+blur = true
+# sigma of the channel blur
+sigma = 2.0
+# subtract median signal outside all ROIs
+background_correction = true
+# set negative values to 0 after background subtraction
+clip_negative = true
+
+# --- Focus filter (Shannon entropy) ---
+# image(s) used for the entropy focus filter  (brightfield | fluorescence)
+entropy_source = 'brightfield'
+# skip images with entropy below this
+# entropy_min = 6.5
+# skip images with entropy above this
+# entropy_max = 6.5
+
+# --- Fluorescence segmentation (average of both channels -> Otsu) ---
+# blur of the average image before Otsu (0 = none)
+otsu_sigma = 2.0
+# white top-hat radius before Otsu (0 = off; needs pyclesperanto-prototype)
+tophat_radius = 0
+
+# --- Per-cell quantification ---
+# ROI erosion in pixels (0 = none)
+erosion_px = 2
+# per-cell statistic used for the ratio  (mean | median)
+statistic = 'mean'
+# measure in the whole ROI or only its Otsu-segmented part  (roi | segmented)
+ratio_region = 'roi'
+# keep cells with segmented_area / roi_area above this; removes out-of-focus or dead cells (0 = keep all)
+min_seg_fraction = 0.5
+
+# --- Output / performance ---
+# name of the output table (without extension)
+output_name = 'summary_all_cells'
+# format of the output table  (xlsx | csv)
+output_format = 'xlsx'
+# parallel worker processes
+max_workers = 4
+# images held in memory at once
+max_in_flight = 8

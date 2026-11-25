@@ -1,0 +1,17 @@
+# Versions used in the thesis are pinned where they were reported (Table 17).
+name: biosensor-quant
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - numpy=2.3
+  - pandas=2.3
+  - scikit-image=0.25
+  - imageio=2.37
+  - scipy
+  - tifffile
+  - openpyxl
+  - pytest
+  - pip
+  # optional, only for the white top-hat filter (tophat_radius > 0):
+  # - pyclesperanto-prototype=0.24.4

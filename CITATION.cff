@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the thesis below."
+title: "biosensor-quant: single-cell quantification of ratiometric fluorescent biosensors"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Nutz
+    given-names: Lukas
+    affiliation: "Quantitative Cell Biology group, RPTU Kaiserslautern-Landau"
+preferred-citation:
+  type: thesis
+  thesis-type: "Master's thesis"
+  title: "Quantification of ATP Dynamics in S. cerevisiae and Preparation of a Genetic Screen Using Fluorescent Biosensors"
+  authors:
+    - family-names: Nutz
+      given-names: Lukas
+  institution:
+    name: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+  department: "Department of Biology, Division of Cell Biology"
+  year: 2026
+  month: 3

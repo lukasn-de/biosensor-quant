@@ -1,7 +1,7 @@
 """All user-adjustable settings, their defaults, and the QUEEN / GEQO channel presets.
 
 Order of precedence (later wins):  defaults  <  --preset  <  --config file  <  command-line options.
-Defaults follow the method described in the thesis (Section 2.4).
+Defaults follow the method used in the thesis.
 """
 
 import tomllib

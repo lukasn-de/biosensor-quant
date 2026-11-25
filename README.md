@@ -2,17 +2,14 @@
 
 Single-cell quantification of ratiometric fluorescent biosensors in budding yeast microscopy
 images, starting from Cellpose segmentations. This repository holds the image analysis
-scripts from my Master's thesis, restructured into a reusable, configurable tool:
-
-> Lukas Nutz (2026). *Quantification of ATP Dynamics in S. cerevisiae and Preparation of a
-> Genetic Screen Using Fluorescent Biosensors.* Master's thesis, RPTU Kaiserslautern-Landau.
-
-The code was developed during my Master's thesis in the Quantitative Cell Biology group
-(Jun.-Prof. Yury Bykov) at RPTU Kaiserslautern-Landau.
+scripts from my Master's thesis (*Quantification of ATP Dynamics in S. cerevisiae and
+Preparation of a Genetic Screen Using Fluorescent Biosensors*, 2026, unpublished), restructured
+into a reusable, configurable tool. The code was developed in the Quantitative Cell Biology
+group (Jun.-Prof. Yury Bykov) at RPTU Kaiserslautern-Landau.
 
 It has presets for the ATP biosensors **QUEEN** and **GEQO**. Every processing parameter can be
 changed, so the tool can be adapted to other ratiometric sensors, microscopes and acquisition
-settings. The defaults follow the method described in the thesis (Section 2.4).
+settings. The defaults follow the method used in the thesis, summarised in the table below.
 
 ## Pipeline
 
@@ -133,5 +130,5 @@ python -m pytest tests/
 
 ## License
 
-MIT, see [LICENSE](LICENSE). If you use this code, please cite the thesis (see
+MIT, see [LICENSE](LICENSE). If you use this code, please cite this repository (see
 [CITATION.cff](CITATION.cff)).
